@@ -14,7 +14,7 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 8, 13);
         Checkout checkout = new Checkout(chainsaw, 3, 10, checkoutDate);
         double cost = checkout.totalRentalCost();
-        assertEquals(5.36, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
+        assertEquals(5.36, cost, 0.01);
     }
 	
 	@Test
@@ -23,7 +23,7 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 8, 13);
         Checkout checkout = new Checkout(chainsaw, 3, 0, checkoutDate);
         double cost = checkout.totalRentalCost();
-        assertEquals(5.96, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
+        assertEquals(5.96, cost, 0.01);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 8, 20);
         Checkout checkout = new Checkout(ladder, 8, 0, checkoutDate);
         double cost = checkout.totalRentalCost();
-        assertEquals(17.91, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
+        assertEquals(17.91, cost, 0.01);
     }
     
     @Test
