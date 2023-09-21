@@ -35,7 +35,7 @@ abstract class Tool {
             // Check if any of the rental days are weekends
             for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
                 if (date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY) {
-                    dailyRentalCharge = 1.99;
+                    this.countChargeDays += 1;
                 }
                 this.countChargeDays += 1;
             }
@@ -54,7 +54,7 @@ abstract class Tool {
         		}
         		
         		if (date.getMonthValue() == 9 && date.getDayOfWeek() == DayOfWeek.MONDAY && date.getDayOfMonth() <= 7) {
-        			dailyRentalCharge += 1.49;
+        			this.countChargeDays += 1;
         		}
         		this.countChargeDays += 1;
         	}

@@ -14,7 +14,7 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 8, 13);
         Checkout checkout = new Checkout(chainsaw, 3, 10, checkoutDate);
         double cost = checkout.totalRentalCost();
-        assertEquals(4.02, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
+        assertEquals(5.36, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
     }
 	
 	@Test
@@ -23,7 +23,7 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 8, 13);
         Checkout checkout = new Checkout(chainsaw, 3, 0, checkoutDate);
         double cost = checkout.totalRentalCost();
-        assertEquals(4.47, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
+        assertEquals(5.96, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
     }
 
     @Test
@@ -32,7 +32,7 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 8, 20);
         Checkout checkout = new Checkout(ladder, 8, 0, checkoutDate);
         double cost = checkout.totalRentalCost();
-        assertEquals(21.89, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
+        assertEquals(17.91, cost, 0.01); // Assuming the delta is 0.01 for rounding issues
     }
     
     @Test
@@ -54,7 +54,7 @@ public class CheckoutTest {
         double cost = checkout.totalRentalCost();
 
         // Ladder has no additional charge for holidays
-        assertEquals(3.98, cost, 0.01); 
+        assertEquals(5.97, cost, 0.01); 
     }
 
     @Test
@@ -63,9 +63,9 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 7, 3);
         Checkout checkout = new Checkout(jackhammer, 2, 10, checkoutDate);
         double cost = checkout.totalRentalCost();
-        
+
         // Jackhammer (DeWalt) has a discount for rentals on Independence Day
-        assertEquals(5.38, cost, 0.01); 
+        assertEquals(8.07, cost, 0.01); 
     }
 
     @Test
@@ -74,9 +74,9 @@ public class CheckoutTest {
         LocalDate checkoutDate = LocalDate.of(2023, 9, 4);
         Checkout checkout = new Checkout(jackhammer, 1, 0, checkoutDate);
         double cost = checkout.totalRentalCost();
-        
+
         // Jackhammer (Ridgid) has no additional charge for holidays
-        assertEquals(2.99, cost, 0.01); 
+        assertEquals(5.98, cost, 0.01); 
     }
 
 }
